@@ -59,7 +59,7 @@ export function Navbar() {
 
         <div className="hidden lg:block">
           <ButtonLink to="/contact" size="md">
-            Book a Session
+            Contact Us
           </ButtonLink>
         </div>
 
@@ -100,7 +100,7 @@ export function Navbar() {
                 ))}
               </div>
               <ButtonLink to="/contact" className="mt-4 w-full">
-                Book a Session
+                Contact Us
               </ButtonLink>
             </div>
           </motion.div>

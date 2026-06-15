@@ -22,11 +22,11 @@ import { CTABanner } from "@/components/sections/CTABanner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Curamend — Heal What Words Cannot Reach | Dr. Sunil Sadhana" },
+      { title: "Curamend — Heal What Words Cannot Reach | Dr. Sunil Saldanha" },
       {
         name: "description",
         content:
-          "Emotional healing with Dr. Sunil Sadhana — neuroscience meets ancient wisdom. Group sessions every Saturday across Thane, Ghatkopar & Kalyan.",
+          "Emotional healing with Dr. Sunil Saldanha — neuroscience meets ancient wisdom. Group sessions every Saturday across Thane, Ghatkopar & Kalyan.",
       },
       { property: "og:title", content: "Curamend — Heal What Words Cannot Reach" },
       {
@@ -86,11 +86,10 @@ function Home() {
           <Reveal delay={0.2} className="mx-auto w-full max-w-md">
             <div className="relative">
               <div className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-violet/30 to-gold/20 blur-xl" />
-              <ImagePlaceholder
-                label="Doctor's Portrait Photo"
-                ratio="4 / 5"
-                rounded="rounded-3xl"
-                className="relative border-violet/50 bg-surface/60"
+              <img
+                src="/doctor-portrait.jpg"
+                alt="Doctor's Portrait Photo"
+                className="relative aspect-[4/5] w-full object-cover rounded-3xl border border-violet/50 bg-surface/60"
               />
             </div>
           </Reveal>
@@ -152,10 +151,10 @@ function Home() {
                   <p className="mt-3 flex-1 font-body text-[15px] leading-relaxed text-navy/70">
                     {card.text}
                   </p>
-                  <ImagePlaceholder
-                    label={card.imageLabel}
-                    ratio="3 / 2"
-                    className="mt-6 border-violet/30 bg-violet/[0.04]"
+                  <img
+                    src={card.imageUrl}
+                    alt={card.title}
+                    className="mt-6 aspect-[3/2] w-full rounded-xl object-cover border border-violet/15"
                   />
                 </div>
               </Reveal>
@@ -168,11 +167,10 @@ function Home() {
       <section className="relative overflow-hidden bg-navy py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
           <Reveal className="relative mx-auto w-full max-w-md">
-            <ImagePlaceholder
-              label="Dr. Sunil Sadhana — Professional Photo"
-              ratio="6 / 7"
-              rounded="rounded-2xl"
-              className="border-gold/40"
+            <img
+              src="/doctor-portrait.jpg"
+              alt="Dr. Sunil Saldanha — Professional Photo"
+              className="relative aspect-[6/7] w-full object-cover rounded-2xl border border-gold/40"
             />
             <div className="absolute bottom-4 left-4 rounded-full bg-gradient-to-r from-violet to-[#7a52d6] px-5 py-2 font-ui text-sm font-semibold text-white shadow-glow">
               8+ Years · 500+ Clients
@@ -191,7 +189,7 @@ function Home() {
             <div className="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
                 With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Dr. Sadhana has developed a proprietary methodology
+                integrative healing modalities, Dr. Saldhana has developed a proprietary methodology
                 that addresses emotional wounds at their root — not merely their symptoms.
               </p>
               <p className="text-muted-ink">
@@ -203,7 +201,7 @@ function Home() {
               to="/about"
               className="mt-6 inline-flex items-center gap-1 font-ui text-sm font-semibold text-gold hover:text-amber"
             >
-              Dr. Sadhana's Full Story <ArrowRight className="h-4 w-4" />
+              Dr. Saldhana's Full Story <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>

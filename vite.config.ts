@@ -12,4 +12,17 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      port: 8000,
+      host: '0.0.0.0',
+      allowedHosts: [
+        'localhost',
+        '127.0.0.1',
+        '.ngrok-free.dev',
+        '.ngrok.io',
+        'emotional-healing.onrender.com',
+      ],
+    },
+  },
 });

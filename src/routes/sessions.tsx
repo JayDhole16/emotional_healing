@@ -15,7 +15,7 @@ export const Route = createFileRoute("/sessions")({
       {
         name: "description",
         content:
-          "Two-hour emotional healing sessions every Saturday with Dr. Sunil Sadhana, across Thane, Ghatkopar and Kalyan. Limited seats.",
+          "Two-hour emotional healing sessions every Saturday with Dr. Sunil Saldanha, across Thane, Ghatkopar and Kalyan. Limited seats.",
       },
       { property: "og:title", content: "Saturday Healing Sessions | Curamend" },
       {
@@ -35,11 +35,6 @@ const whatToBring = [
   "Any questions you'd like answered",
 ];
 
-const tiers = [
-  { name: "Single Session", note: "One Saturday session", price: "[Price]" },
-  { name: "Monthly", note: "Four Saturday sessions", price: "[Price]", featured: true },
-  { name: "Journey Package", note: "Extended healing program", price: "[Price]" },
-];
 
 function Sessions() {
   return (
@@ -47,7 +42,7 @@ function Sessions() {
       <PageHero
         eyebrow="Every Saturday · 2 Hours"
         title="Saturday Healing Sessions"
-        subtitle="A protected space, once a week, to do the deep work of emotional healing — guided personally by Dr. Sadhana."
+        subtitle="A protected space, once a week, to do the deep work of emotional healing — guided personally by Dr. Saldhana."
       >
         <div className="mt-8 flex justify-center">
           <ButtonLink to="/contact" size="lg">
@@ -80,10 +75,10 @@ function Sessions() {
             </div>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto w-full max-w-md">
-            <ImagePlaceholder
-              label="Session environment photo"
-              ratio="4 / 3"
-              className="border-violet/40"
+            <img
+              src="https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-24.jpeg"
+              alt="Session environment photo"
+              className="aspect-[4/3] w-full rounded-2xl object-cover border border-violet/40"
             />
           </Reveal>
         </div>
@@ -156,48 +151,19 @@ function Sessions() {
           <SectionHeader eyebrow="The Experience" title="A Session, Step by Step" light />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <Reveal>
-              <ImagePlaceholder label="Session environment photo" ratio="4 / 3" className="border-violet/30" />
+              <img
+                src="https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-18.jpeg"
+                alt="Session environment photo"
+                className="aspect-[4/3] w-full rounded-2xl object-cover border border-violet/30"
+              />
             </Reveal>
             <Reveal delay={0.1}>
-              <ImagePlaceholder label="Group activity photo" ratio="4 / 3" className="border-violet/30" />
+              <img
+                src="https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-20.jpeg"
+                alt="Group activity photo"
+                className="aspect-[4/3] w-full rounded-2xl object-cover border border-violet/30"
+              />
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="bg-navy py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <SectionHeader eyebrow="Investment" title="Session Pricing" />
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {tiers.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.08}>
-                <div
-                  className={`flex h-full flex-col rounded-2xl border p-7 ${
-                    t.featured
-                      ? "border-gold bg-gradient-to-b from-surface to-navy shadow-gold lg:-mt-4"
-                      : "border-border bg-surface"
-                  }`}
-                >
-                  {t.featured && (
-                    <span className="mb-3 w-fit rounded-full bg-gold/15 px-3 py-1 font-ui text-xs font-semibold uppercase tracking-wide text-gold">
-                      Most Popular
-                    </span>
-                  )}
-                  <h3 className="font-display text-2xl text-foreground">{t.name}</h3>
-                  <p className="mt-1 font-body text-sm text-muted-ink">{t.note}</p>
-                  <p className="mt-6 font-display text-4xl text-gold">{t.price}</p>
-                  <p className="mt-1 font-mono text-xs text-muted-ink">[Client to set pricing]</p>
-                  <ButtonLink
-                    to="/contact"
-                    variant={t.featured ? "gold" : "outline"}
-                    className="mt-6 w-full"
-                  >
-                    Book Now
-                  </ButtonLink>
-                </div>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
@@ -225,7 +191,7 @@ function Sessions() {
         </div>
       </section>
 
-      <CTABanner title="Reserve Your Saturday" ctaLabel="Book a Session" />
+      <CTABanner title="Reserve Your Saturday" ctaLabel="Contact Us" />
     </>
   );
 }

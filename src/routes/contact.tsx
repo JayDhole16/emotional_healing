@@ -22,7 +22,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact & Book | Curamend" },
       {
         property: "og:description",
-        content: "Book your Saturday healing session with Dr. Sunil Sadhana.",
+        content: "Book your Saturday healing session with Dr. Sunil Saldanha.",
       },
     ],
   }),

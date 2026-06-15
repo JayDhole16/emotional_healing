@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { AnimatedCounter } from "@/components/ui-custom/AnimatedCounter";
 import { ArrowRight, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/science")({
   head: () => ({
@@ -62,10 +63,18 @@ function Science() {
             </p>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto w-full max-w-md">
-            <ImagePlaceholder
-              label="Research visual / brain scan imagery"
-              ratio="4 / 3"
-              className="border-cerulean/40"
+            <motion.img
+              src="/research-diagram.png"
+              alt="fMRI BOLD Activation Diagram"
+              className="w-full h-auto rounded-2xl border border-cerulean/40"
+              animate={{
+                boxShadow: [
+                  "0 0 15px rgba(45,156,219,0.05)",
+                  "0 0 35px rgba(45,156,219,0.25)",
+                  "0 0 15px rgba(45,156,219,0.05)",
+                ],
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
           </Reveal>
         </div>
@@ -130,7 +139,7 @@ function Science() {
                 <div className="flex items-start gap-4 rounded-xl border border-violet/15 bg-white p-5">
                   <FileText className="mt-0.5 h-5 w-5 shrink-0 text-cerulean" />
                   <p className="font-mono text-sm text-navy/70">
-                    [Publication / citation placeholder {n} — Dr. Sadhana's published works and
+                    [Publication / citation placeholder {n} — Dr. Saldhana's published works and
                     research references to be added by client.]
                   </p>
                 </div>

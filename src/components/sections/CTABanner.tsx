@@ -11,7 +11,7 @@ type CTABannerProps = {
 
 export function CTABanner({
   title = "Ready to Begin Your Healing Journey?",
-  subtitle = "Sessions every Saturday. Limited seats available.",
+  subtitle = "Sessions every Saturday.",
   ctaLabel = "Contact Us Today",
   ctaTo = "/contact",
 }: CTABannerProps) {

@@ -84,14 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Curamend by Dr. Sunil Sadhana blends modern neuroscience with ancient healing traditions. Emotional healing sessions every Saturday across Thane, Ghatkopar & Kalyan.",
+          "Curamend by Dr. Sunil Saldanha blends modern neuroscience with ancient healing traditions. Emotional healing sessions every Saturday across Thane, Ghatkopar & Kalyan.",
       },
       { name: "author", content: "Curamend Healthcare" },
       { property: "og:title", content: "Curamend — Where Neuroscience Meets Inner Peace" },
       {
         property: "og:description",
         content:
-          "Evidence-based, spiritually grounded emotional healing with Dr. Sunil Sadhana. Sessions every Saturday.",
+          "Evidence-based, spiritually grounded emotional healing with Dr. Sunil Saldanha. Sessions every Saturday.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

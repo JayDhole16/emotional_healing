@@ -19,7 +19,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore Curamend's healing services — group emotional healing, individual consultations, trauma release, breathwork and more, led by Dr. Sunil Sadhana.",
+          "Explore Curamend's healing services — group emotional healing, individual consultations, trauma release, breathwork and more, led by Dr. Sunil Saldanha.",
       },
       { property: "og:title", content: "Our Services | Curamend" },
       {
@@ -37,7 +37,7 @@ function Services() {
       <PageHero
         eyebrow="What We Offer"
         title="Our Services"
-        subtitle="A spectrum of healing modalities, each rooted in science and delivered with spiritual depth — all personally guided by Dr. Sadhana."
+        subtitle="A spectrum of healing modalities, each rooted in science and delivered with spiritual depth — all personally guided by Dr. Saldhana."
       />
 
       {/* Overview */}
@@ -67,10 +67,10 @@ function Services() {
                   <p className="mt-2 flex-1 font-body text-[15px] leading-relaxed text-navy/70">
                     {s.description}
                   </p>
-                  <ImagePlaceholder
-                    label={s.imageLabel}
-                    ratio="3 / 2"
-                    className="mt-6 border-violet/30 bg-violet/[0.04]"
+                  <img
+                    src={s.imageUrl}
+                    alt={s.title}
+                    className="mt-6 aspect-[3/2] w-full rounded-xl object-cover border border-violet/15"
                   />
                 </div>
               </Reveal>

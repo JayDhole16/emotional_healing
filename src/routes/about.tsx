@@ -11,13 +11,13 @@ import { SacredGeometry } from "@/components/ui-custom/SacredGeometry";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dr. Sunil Sadhana | Curamend" },
+      { title: "About Dr. Sunil Saldanha | Curamend" },
       {
         name: "description",
         content:
-          "Meet Dr. Sunil Sadhana — emotional healing specialist and founder of Curamend, blending neuroscience with ancient healing wisdom.",
+          "Meet Dr. Sunil Saldanha — emotional healing specialist and founder of Curamend, blending neuroscience with ancient healing wisdom.",
       },
-      { property: "og:title", content: "About Dr. Sunil Sadhana | Curamend" },
+      { property: "og:title", content: "About Dr. Sunil Saldanha | Curamend" },
       {
         property: "og:description",
         content: "The story, credentials and philosophy behind Curamend's emotional healing practice.",
@@ -67,10 +67,10 @@ function About() {
       <section className="bg-navy py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="mx-auto w-full max-w-md">
-            <ImagePlaceholder
-              label="Dr. Sadhana full biography photo"
-              ratio="6 / 7"
-              className="border-gold/40"
+            <img
+              src="/about-portrait.jpg"
+              alt="Dr. Saldhana full biography photo"
+              className="aspect-[6/7] w-full object-cover object-[center_20%] rounded-2xl border border-gold/40"
             />
           </Reveal>
           <Reveal delay={0.1}>
@@ -82,7 +82,7 @@ function About() {
             <div className="mt-6 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
                 With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Dr. Sadhana has developed a proprietary methodology
+                integrative healing modalities, Dr. Saldhana has developed a proprietary methodology
                 that addresses emotional wounds at their root.
               </p>
               <p className="text-muted-ink">
@@ -131,7 +131,7 @@ function About() {
               align="left"
             />
             <p className="mt-6 font-body text-[15px] leading-relaxed text-platinum/80">
-              True healing happens when the mind, body and spirit are addressed as one. Dr. Sadhana's
+              True healing happens when the mind, body and spirit are addressed as one. Dr. Saldhana's
               work refuses the false choice between science and soul — drawing on both to reach what
               neither could alone.
             </p>
@@ -176,12 +176,19 @@ function About() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHeader eyebrow="Gallery" title="Inside Curamend" />
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {[
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-17.jpeg",
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-22.jpeg",
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-24.jpeg",
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-20.jpeg",
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-15.jpeg",
+              "https://www.curamendhealthcare.com/assets/images/award-gallery-1/influncer-gallery/influncer-img-1.jpeg",
+            ].map((src, i) => (
               <Reveal key={i} delay={i * 0.06}>
-                <ImagePlaceholder
-                  label={`Gallery: Session / Clinic / Event ${i + 1}`}
-                  ratio="4 / 3"
-                  className="border-violet/30"
+                <img
+                  src={src}
+                  alt={`Inside Curamend Gallery ${i + 1}`}
+                  className="aspect-[4/3] w-full rounded-2xl object-cover border border-violet/30"
                 />
               </Reveal>
             ))}
@@ -189,7 +196,7 @@ function About() {
         </div>
       </section>
 
-      <CTABanner title="Book a Session with Dr. Sadhana" ctaLabel="Book Now" />
+      <CTABanner title="Contact Us with Dr. Saldhana" ctaLabel="Contact Us" />
     </>
   );
 }

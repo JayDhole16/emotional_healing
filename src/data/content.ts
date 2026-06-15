@@ -13,7 +13,7 @@ import type { LucideIcon } from "lucide-react";
 export const BRAND = {
   name: "Curamend",
   legal: "Curamend Healthcare",
-  doctor: "Dr. Sunil Sadhana",
+  doctor: "Dr. Sunil Saldanha",
   tagline: "Science of the Soul. Healing of the Heart.",
   email: "curamendhealthcare@gmail.com",
   whatsapp: "919321931801",
@@ -46,7 +46,7 @@ export type ValueCard = {
   title: string;
   text: string;
   icon: LucideIcon;
-  imageLabel: string;
+  imageUrl: string;
 };
 
 export const VALUE_CARDS: ValueCard[] = [
@@ -55,21 +55,21 @@ export const VALUE_CARDS: ValueCard[] = [
     title: "Rooted in Neuroscience",
     text: "Our healing protocols draw from cognitive neuroscience, trauma therapy research, and psychosomatic medicine — validated by decades of clinical evidence.",
     icon: Brain,
-    imageLabel: "Scientific / medical visual",
+    imageUrl: "/neuroscience.png",
   },
   {
     eyebrow: "Spiritually Grounded",
     title: "Ancient Wisdom Activated",
     text: "Integrating breathwork, energy psychology, and consciousness practices refined across millennia of human healing tradition.",
     icon: Sparkles,
-    imageLabel: "Spiritual practice visual",
+    imageUrl: "/spiritual.png",
   },
   {
     eyebrow: "Personally Guided",
-    title: "Direct Access to Dr. Sadhana",
-    text: "Every session is personally led by Dr. Sunil Sadhana — no assistants, no substitutes. Your healing is his sole focus.",
+    title: "Direct Access to Dr. Saldhana",
+    text: "Every session is personally led by Dr. Sunil Saldanha — no assistants, no substitutes. Your healing is his sole focus.",
     icon: HeartHandshake,
-    imageLabel: "Personal session visual",
+    imageUrl: "/guidance.png",
   },
 ];
 
@@ -77,7 +77,7 @@ export type Service = {
   title: string;
   description: string;
   icon: LucideIcon;
-  imageLabel: string;
+  imageUrl: string;
 };
 
 export const SERVICES: Service[] = [
@@ -86,42 +86,42 @@ export const SERVICES: Service[] = [
     description:
       "Our core offering — transformative group healing sessions held every Saturday for two hours, guiding you toward emotional freedom.",
     icon: HeartHandshake,
-    imageLabel: "Service image 1",
+    imageUrl: "/service-1.png",
   },
   {
     title: "Individual Consultations",
     description:
       "Private, one-on-one healing sessions for those who need focused, personalised attention and a deeper therapeutic relationship.",
     icon: Sparkles,
-    imageLabel: "Service image 2",
+    imageUrl: "/service-2.png",
   },
   {
     title: "Trauma Release",
     description:
       "Trauma-informed protocols that address emotional wounds at the root — combining somatic awareness and nervous-system regulation.",
     icon: ShieldCheck,
-    imageLabel: "Service image 3",
+    imageUrl: "/service-3.png",
   },
   {
     title: "Mindfulness & Breathwork",
     description:
       "Breathwork-based emotional regulation practices that calm the nervous system and restore a felt sense of inner safety.",
     icon: Wind,
-    imageLabel: "Service image 4",
+    imageUrl: "/service-4.png",
   },
   {
     title: "Energy Psychology",
     description:
       "Integrative energy-based techniques that release stored emotional charge and re-pattern the body's stress response.",
     icon: Activity,
-    imageLabel: "Service image 5",
+    imageUrl: "/service-5.png",
   },
   {
     title: "Integration & Aftercare",
     description:
       "Structured follow-up and integration practices that help transformation hold long after the session ends.",
     icon: Flower2,
-    imageLabel: "Service image 6",
+    imageUrl: "/service-6.png",
   },
 ];
 
@@ -186,8 +186,8 @@ export const FAQS: FAQ[] = [
     a: "Curamend complements, and does not replace, medical or psychiatric care. We're happy to work alongside your existing care team.",
   },
   {
-    q: "Will Dr. Sadhana personally lead my session?",
-    a: "Yes. Every session is personally led by Dr. Sunil Sadhana — no assistants, no substitutes.",
+    q: "Will Dr. Saldhana personally lead my session?",
+    a: "Yes. Every session is personally led by Dr. Sunil Saldanha — no assistants, no substitutes.",
   },
   {
     q: "How many sessions will I need?",
@@ -210,7 +210,7 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "The emotional clarity I gained in just four sessions was more than years of conventional therapy provided. Dr. Sadhana's approach is unlike anything I've experienced.",
+      "The emotional clarity I gained in just four sessions was more than years of conventional therapy provided. Dr. Saldhana's approach is unlike anything I've experienced.",
     name: "R. M.",
     city: "Mumbai",
     rating: 5,
@@ -234,7 +234,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Every Saturday became the hour I protected most. The group setting felt safe, and Dr. Sadhana's presence was steady and deeply reassuring.",
+      "Every Saturday became the hour I protected most. The group setting felt safe, and Dr. Saldhana's presence was steady and deeply reassuring.",
     name: "P. V.",
     city: "Ghatkopar",
     rating: 5,
@@ -274,7 +274,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "The most human, intelligent healing experience I've had. Dr. Sadhana sees you — really sees you.",
+      "The most human, intelligent healing experience I've had. Dr. Saldhana sees you — really sees you.",
     name: "L. F.",
     city: "Mumbai",
     rating: 5,
@@ -322,7 +322,7 @@ export const SESSION_INCLUDES = [
   { title: "Breathwork", text: "Nervous-system regulation through guided breath." },
   { title: "Safe Group Container", text: "Small groups held in a confidential space." },
   { title: "Integration Tools", text: "Take-home practices to sustain your shift." },
-  { title: "Personal Attention", text: "Direct guidance from Dr. Sadhana throughout." },
+  { title: "Personal Attention", text: "Direct guidance from Dr. Saldhana throughout." },
   { title: "Aftercare", text: "Follow-up guidance between sessions." },
 ];
 
