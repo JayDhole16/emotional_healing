@@ -80,12 +80,19 @@ function Science() {
               align="left"
             />
             <p className="mt-6 font-body text-[15px] leading-relaxed text-platinum/80">
-              Curamend's methodology synthesises findings from cognitive neuroscience, trauma
-              research, psychosomatic medicine and contemplative science. We translate rigorous
-              research into a practice you can feel.
+              Emotional wounds are caused by unresolved threats — to survival or reproduction. When
+              a threat cannot be actively resolved, the mind replays it, searching for completion.
+              Childhood trauma is particularly damaging: abuse in early life leads to deficient
+              development of the left hemisphere, impairing the analytical thinking needed for
+              emotional regulation.
             </p>
-            <p className="mt-4 font-mono text-sm leading-relaxed text-muted-ink">
-              [Citation placeholder — key research underpinning the methodology, to be provided.]
+            <p className="mt-4 font-body text-[15px] leading-relaxed text-platinum/80">
+              Curamend's methodology synthesises findings from cognitive neuroscience, trauma
+              research, psychosomatic medicine and contemplative science. Children raised in
+              stressful environments become sensitised to threat — developing aggression,
+              hypervigilance and depression as defences. These responses protected them then
+              but prevent them from being functional now. We translate rigorous research into
+              a practice that safely reverses that.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto w-full max-w-md">
@@ -183,9 +190,12 @@ function Science() {
               Why Both Science <span className="text-gradient-gold">and</span> Spirit?
             </h2>
             <p className="mx-auto mt-5 font-body text-lg leading-relaxed text-platinum/90">
-              Science explains the mechanism; spirit supplies the meaning. Addressing only one
-              leaves healing incomplete. Together, they reach the places talk alone cannot —
-              producing change that is both measurable and profound.
+              Science explains the mechanism of trauma — how threats activate fight, flight, freeze
+              or collapse responses that become stored in the nervous system. Spirit supplies the
+              meaning — the re-processing, forgiveness and shared human connection that allows
+              those responses to finally resolve. Addressing only one leaves healing incomplete.
+              Together, they reach the places talk alone cannot — producing change that is both
+              measurable and profound.
             </p>
           </Reveal>
         </div>

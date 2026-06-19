@@ -71,8 +71,10 @@ function Services() {
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="font-body text-lg leading-relaxed text-platinum/80">
-              At Curamend, healing is never one-size-fits-all. Every service is designed to meet you
-              where you are — gently, intelligently, and with measurable results.
+              Emotional healing requires more than insight — it requires expression, re-processing
+              and integration. Every service at Curamend is designed to address a specific layer
+              of how trauma is stored and how it can be safely resolved, meeting you exactly where
+              you are.
             </p>
           </Reveal>
         </div>

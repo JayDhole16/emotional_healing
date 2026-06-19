@@ -211,13 +211,16 @@ function Home() {
             </p>
             <div className="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
-                With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Sunil Saldanha has developed a proprietary methodology
-                that addresses emotional wounds at their root — not merely their symptoms.
+                Emotional healing is the process of recovering from emotional wounds inflicted by
+                unresolved threats — to survival or to reproduction. With over eight years of
+                clinical practice, Sunil Saldanha has developed a methodology that addresses these
+                wounds at their neurological root, not merely their symptoms.
               </p>
-              <p className="text-muted-ink">
-                [Placeholder biography — to be replaced by client. Add credentials, philosophy and
-                professional background here.]
+              <p>
+                Drawing on cognitive neuroscience, trauma research and contemplative practice, his
+                work guides clients through the four pathways of healing: emotional expression,
+                cognitive re-processing, forgiveness work, and shared healing in a supported group
+                — each one validated by decades of research.
               </p>
             </div>
             <Link
@@ -241,8 +244,9 @@ function Home() {
               Two Hours That Can Change Everything
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-platinum/90">
-              Our group emotional healing sessions run every Saturday, two hours each, across all
-              three Curamend sessions. Limited seats. Transformative results.
+              Humans regulate negative emotions through contact with others. Our group emotional
+              healing sessions run every Saturday — two hours of guided expression, breathwork and
+              re-processing in a safe, confidential space. Limited seats. Transformative results.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

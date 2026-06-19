@@ -97,8 +97,10 @@ function Sessions() {
             <SectionHeader eyebrow="The Format" title="What to Expect" align="left" />
             <p className="mt-6 font-body text-[15px] leading-relaxed text-platinum/80">
               Each session unfolds over two unhurried hours. You'll move through grounding,
-              breathwork, guided emotional release and gentle integration — all within a safe,
-              confidential group container.
+              breathwork for nervous system regulation, guided emotional expression and cognitive
+              re-processing — all within a safe, confidential group container. Healing through
+              shared presence is not incidental; research consistently shows that interpersonal
+              connection is central to emotional recovery.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[

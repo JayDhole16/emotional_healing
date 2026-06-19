@@ -51,21 +51,21 @@ export const VALUE_CARDS: ValueCard[] = [
   {
     eyebrow: "Evidence-Based",
     title: "Rooted in Neuroscience",
-    text: "Our healing protocols draw from cognitive neuroscience, trauma therapy research, and psychosomatic medicine — validated by decades of clinical evidence.",
+    text: "Emotional wounds are caused by unresolved threats to survival or reproduction. Our protocols address trauma at its neurological root — where the brain stores unprocessed experience.",
     icon: Brain,
     imageUrl: "/neuroscience.png",
   },
   {
     eyebrow: "Spiritually Grounded",
     title: "Ancient Wisdom Activated",
-    text: "Integrating breathwork, energy psychology, and consciousness practices refined across millennia of human healing tradition.",
+    text: "Healing requires more than insight — it demands expression, re-processing and integration. We draw on millennia of contemplative practice to guide what science alone cannot reach.",
     icon: Sparkles,
     imageUrl: "/spiritual.png",
   },
   {
     eyebrow: "Personally Guided",
     title: "Direct Access to Sunil Saldanha",
-    text: "Every session is personally led by Sunil Saldanha — no assistants, no substitutes. Your healing is his sole focus.",
+    text: "Every session is personally led by Sunil Saldanha — no assistants, no substitutes. Healing through shared presence is not a feature; it is the foundation of this work.",
     icon: HeartHandshake,
     imageUrl: "/guidance.png",
   },
@@ -82,42 +82,42 @@ export const SERVICES: Service[] = [
   {
     title: "Emotional Healing Sessions",
     description:
-      "Our core offering — transformative group healing sessions held every Saturday for two hours, guiding you toward emotional freedom.",
+      "Our core offering — transformative group healing sessions every Saturday. Emotional wounds from unresolved threat responses are addressed through guided expression, re-processing and integration.",
     icon: HeartHandshake,
     imageUrl: "/service-1.png",
   },
   {
     title: "Individual Consultations",
     description:
-      "Private, one-on-one healing sessions for those who need focused, personalised attention and a deeper therapeutic relationship.",
+      "Private one-on-one sessions for focused, personalised healing. Ideal for those whose trauma history requires careful, individually mapped therapeutic attention.",
     icon: Sparkles,
     imageUrl: "/service-2.png",
   },
   {
     title: "Trauma Release",
     description:
-      "Trauma-informed protocols that address emotional wounds at the root — combining somatic awareness and nervous-system regulation.",
+      "Trauma activates survival defences — fight, flight, freeze, or collapse — that can persist long after the threat is gone. These protocols safely discharge stored defensive responses from the nervous system.",
     icon: ShieldCheck,
     imageUrl: "/service-3.png",
   },
   {
     title: "Mindfulness & Breathwork",
     description:
-      "Breathwork-based emotional regulation practices that calm the nervous system and restore a felt sense of inner safety.",
+      "The parasympathetic nervous system holds the key to calming trauma responses. Breathwork-based practices directly regulate the autonomic nervous system, restoring inner safety.",
     icon: Wind,
     imageUrl: "/service-4.png",
   },
   {
     title: "Energy Psychology",
     description:
-      "Integrative energy-based techniques that release stored emotional charge and re-pattern the body's stress response.",
+      "Integrative techniques that combine cognitive re-processing with somatic stimulation — discharging stored emotional charge and re-patterning the body's conditioned stress response.",
     icon: Activity,
     imageUrl: "/service-5.png",
   },
   {
     title: "Integration & Aftercare",
     description:
-      "Structured follow-up and integration practices that help transformation hold long after the session ends.",
+      "Healing requires time to consolidate. Structured follow-up practices anchor cognitive and emotional shifts into daily life so transformation holds long after the session ends.",
     icon: Flower2,
     imageUrl: "/service-6.png",
   },
@@ -132,40 +132,40 @@ export type Principle = {
 export const SCIENCE_PRINCIPLES: Principle[] = [
   {
     title: "Neuroplasticity",
-    text: "The brain physically rewires in response to experience. Guided healing creates the conditions for new, healthier emotional pathways to form.",
+    text: "Childhood trauma damages brain development — particularly the left hemisphere, which handles analytical thinking and emotional regulation. Guided healing creates conditions for the brain to physically rewire, building healthier emotional pathways.",
     icon: Brain,
   },
   {
     title: "Psychosomatic Connection",
-    text: "Emotion lives in the body. We work with the mind–body loop, releasing tension patterns that conventional talk therapy often misses.",
+    text: "Trauma lives in the body. Unresolved threat responses — fight, flight, freeze, collapse — are stored as physical tension patterns. We work the mind–body loop to release what talk therapy cannot reach.",
     icon: Activity,
   },
   {
     title: "Trauma-Informed Care",
-    text: "Every protocol is designed to keep the nervous system safe, preventing re-traumatisation while gently processing what's stored.",
+    text: "Every protocol keeps the nervous system safe. By understanding the sympathetic and parasympathetic responses to threat, we process stored trauma gently — without re-traumatisation.",
     icon: ShieldCheck,
   },
   {
     title: "Energy Psychology",
-    text: "Evidence-informed techniques that combine cognitive focus with somatic stimulation to discharge emotional intensity rapidly.",
+    text: "Evidence-informed techniques that combine cognitive re-processing with somatic stimulation. This discharges emotional intensity rapidly and re-patterns the body's conditioned stress response.",
     icon: Sparkles,
   },
 ];
 
 export const METHODOLOGY_STEPS = [
-  { title: "Assessment", text: "Understanding your emotional history and present-day patterns." },
-  { title: "Protocol Design", text: "A tailored blend of scientific and spiritual modalities." },
-  { title: "Session", text: "Guided two-hour healing work in a held, safe space." },
-  { title: "Integration", text: "Practices that anchor the shift into daily life." },
-  { title: "Outcome", text: "Measurable, lasting emotional freedom and clarity." },
+  { title: "Assessment", text: "Understanding your emotional history — the unresolved threats and defences that shaped your present-day patterns." },
+  { title: "Expression", text: "Creating space for trauma-related thoughts and emotions to surface through guided, safe expression." },
+  { title: "Re-Processing", text: "Cognitive re-processing that integrates the traumatic experience, shifting how you see yourself and the world." },
+  { title: "Integration", text: "Anchoring the shift into daily life through practices that make transformation hold." },
+  { title: "Outcome", text: "Measurable, lasting emotional freedom — resilience, clarity and the capacity to move forward." },
 ];
 
 export const PROCESS_STEPS = [
-  { title: "Initial Consultation", text: "We listen deeply to where you are and where you long to be." },
-  { title: "Assessment", text: "A clear, compassionate map of your emotional landscape." },
-  { title: "Healing Protocol", text: "Personalised sessions built on science and spirit." },
-  { title: "Integration", text: "Tools and practices to sustain your transformation." },
-  { title: "Transformation", text: "A reclaimed sense of peace, presence and possibility." },
+  { title: "Initial Consultation", text: "We listen deeply to your emotional history and the unresolved experiences that keep you stuck." },
+  { title: "Assessment", text: "A clear, compassionate map of your trauma responses, defences and emotional patterns." },
+  { title: "Healing Protocol", text: "Expression, re-processing and release — personalised sessions built on science and spirit." },
+  { title: "Integration", text: "Cognitive and somatic tools that anchor your transformation into everyday life." },
+  { title: "Transformation", text: "Resilience, emotional freedom and the ability to form deeper, healthier connections." },
 ];
 
 export type FAQ = { q: string; a: string };
@@ -271,12 +271,12 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const SESSION_INCLUDES = [
-  { title: "Guided Healing", text: "Two hours of personally-led emotional healing work." },
-  { title: "Breathwork", text: "Nervous-system regulation through guided breath." },
-  { title: "Safe Group Container", text: "Small groups held in a confidential space." },
-  { title: "Integration Tools", text: "Take-home practices to sustain your shift." },
-  { title: "Personal Attention", text: "Direct guidance from Sunil Saldanha throughout." },
-  { title: "Aftercare", text: "Follow-up guidance between sessions." },
+  { title: "Guided Emotional Expression", text: "A held space for trauma-related thoughts and emotions to surface and be acknowledged." },
+  { title: "Breathwork", text: "Parasympathetic nervous system regulation through guided breath — calming the body's threat response." },
+  { title: "Cognitive Re-Processing", text: "Making sense of painful experiences so the mind can integrate and move forward." },
+  { title: "Safe Group Container", text: "Small, confidential groups that provide the interpersonal connection essential to emotional healing." },
+  { title: "Integration Tools", text: "Take-home practices that anchor shifts into daily life so transformation holds." },
+  { title: "Personal Attention", text: "Direct guidance from Sunil Saldanha throughout — no assistants, no substitutes." },
 ];
 
 export const SESSION_FACTS = [

@@ -115,17 +115,22 @@ function About() {
             />
             <div className="mt-6 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
+                Emotional healing is the process of recovering from emotional wounds inflicted by
+                negative life experiences. Stressors threatening survival — violence, accidents,
+                disease — and those threatening reproduction — breakups, divorce, miscarriage —
+                can all leave unresolved trauma in the body and mind.
+              </p>
+              <p>
                 With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Sunil Saldanha has developed a proprietary methodology
-                that addresses emotional wounds at their root.
+                integrative healing modalities, Sunil Saldanha has developed a methodology that
+                works at the neurological root of emotional wounds. When a threat is not resolved,
+                the mind re-plays it — searching for completion. His work provides that completion.
               </p>
-              <p className="text-muted-ink">
-                [Placeholder biography paragraph two — client to provide details on background,
-                training and the moment that shaped this work.]
-              </p>
-              <p className="text-muted-ink">
-                [Placeholder biography paragraph three — client to provide philosophy and the
-                approach that makes Curamend distinct.]
+              <p>
+                Trauma activates defensive responses — fight, flight, freeze, collapse — that
+                protected us then but can prevent us from being functional now. Sunil Saldanha's
+                approach safely processes these stored responses, guiding clients through expression,
+                cognitive re-processing, and interpersonal healing in a supported group environment.
               </p>
             </div>
           </Reveal>
@@ -165,13 +170,17 @@ function About() {
               align="left"
             />
             <p className="mt-6 font-body text-[15px] leading-relaxed text-platinum/80">
-              True healing happens when the mind, body and spirit are addressed as one. Sunil Saldanha's
-              work refuses the false choice between science and soul — drawing on both to reach what
-              neither could alone.
+              True healing happens when the mind, body and spirit are addressed together. Emotional
+              wounds stem from unresolved threat responses stored in the nervous system. Sunil
+              Saldanha's work refuses the false choice between science and soul — drawing on
+              neuroplasticity research, trauma-informed care, breathwork and energy psychology to
+              reach what neither could alone.
             </p>
-            <p className="mt-4 font-body text-[15px] leading-relaxed text-muted-ink">
-              [Placeholder — client to expand on the philosophy and lived principles guiding the
-              practice.]
+            <p className="mt-4 font-body text-[15px] leading-relaxed text-platinum/80">
+              Most people who go through trauma can be positively transformed. Re-processing
+              traumatic experience causes major cognitive shifts — changing how people see themselves,
+              their relationships and the world. That transformation is what this practice exists
+              to guide.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="relative mx-auto flex h-72 w-full max-w-md items-center justify-center">
