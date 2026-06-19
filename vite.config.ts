@@ -11,13 +11,6 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    nitro: {
-      // Use node preset so Vercel's api/[...path].js can import dist/server/index.mjs
-      preset: "node",
-      output: {
-        serverDir: "dist/server",
-      },
-    },
   },
   vite: {
     server: {

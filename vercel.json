@@ -4,7 +4,11 @@
   "installCommand": "npm install",
   "rewrites": [
     {
-      "source": "/((?!assets/|_next/|favicon|robots\\.txt|sitemap\\.xml|.*\\.[a-zA-Z0-9]+$).*)",
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/api/[...path]"
     }
   ]
