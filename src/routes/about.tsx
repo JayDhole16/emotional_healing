@@ -8,21 +8,55 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { SacredGeometry } from "@/components/ui-custom/SacredGeometry";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${SITE_URL}/about#webpage`,
+  url: `${SITE_URL}/about`,
+  name: "About Sunil Saldanha | Emotional Healing Specialist — Curamend",
+  mainEntity: {
+    "@type": "Person",
+    name: "Sunil Saldanha",
+    jobTitle: "Emotional Healing Specialist",
+    description:
+      "Sunil Saldanha has over 8 years of clinical practice in emotional healing, integrating cognitive neuroscience, trauma therapy, breathwork and energy psychology.",
+    worksFor: { "@type": "Organization", name: "Curamend" },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Sunil Saldanha | Curamend" },
+      { title: "About Sunil Saldanha | Emotional Healing Specialist — Curamend" },
       {
         name: "description",
         content:
-          "Meet Sunil Saldanha — emotional healing specialist and founder of Curamend, blending neuroscience with ancient healing wisdom.",
+          "Meet Sunil Saldanha — emotional healing specialist and founder of Curamend. 8+ years blending neuroscience, trauma therapy, breathwork and ancient healing wisdom.",
       },
-      { property: "og:title", content: "About Sunil Saldanha | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "Sunil Saldanha, about Sunil Saldanha, emotional healing specialist, Curamend founder, trauma therapist, neuroscience healer, breathwork expert, energy psychology",
+      },
+      { property: "og:title", content: "About Sunil Saldanha | Emotional Healing Specialist — Curamend" },
       {
         property: "og:description",
-        content: "The story, credentials and philosophy behind Curamend's emotional healing practice.",
+        content:
+          "The story, credentials and healing philosophy of Sunil Saldanha — founder of Curamend's emotional healing practice.",
       },
+      { property: "og:url", content: `${SITE_URL}/about` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(aboutJsonLd) }],
   }),
   component: About,
 });

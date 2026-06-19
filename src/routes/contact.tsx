@@ -10,21 +10,47 @@ import { Button } from "@/components/ui-custom/Button";
 import { Reveal } from "@/components/ui-custom/Reveal";
 import { cn } from "@/lib/utils";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${SITE_URL}/contact#webpage`,
+  url: `${SITE_URL}/contact`,
+  name: "Book an Emotional Healing Session | Curamend — Sunil Saldanha",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Book | Curamend" },
+      { title: "Book a Healing Session | Contact Sunil Saldanha — Curamend" },
       {
         name: "description",
         content:
-          "Get in touch with Curamend to book an emotional healing session or email curamendhealthcare@gmail.com.",
+          "Book an emotional healing session with Sunil Saldanha at Curamend. Get in touch via email, WhatsApp or the contact form to reserve your Saturday spot.",
       },
-      { property: "og:title", content: "Contact & Book | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "book emotional healing session, contact Sunil Saldanha, Curamend booking, reserve healing session, Curamend contact, emotional healing appointment, Saturday session booking",
+      },
+      { property: "og:title", content: "Book a Healing Session | Contact Sunil Saldanha — Curamend" },
       {
         property: "og:description",
-        content: "Book your Saturday healing session with Sunil Saldanha.",
+        content:
+          "Book your Saturday emotional healing session with Sunil Saldanha. Reach out via email, WhatsApp or our contact form.",
       },
+      { property: "og:url", content: `${SITE_URL}/contact` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(contactJsonLd) }],
   }),
   component: Contact,
 });

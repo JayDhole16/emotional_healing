@@ -8,21 +8,60 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { ButtonLink } from "@/components/ui-custom/Button";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const sessionsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "@id": `${SITE_URL}/sessions#event`,
+  name: "Saturday Emotional Healing Sessions with Sunil Saldanha",
+  description:
+    "Two-hour group emotional healing sessions held every Saturday, personally led by Sunil Saldanha at Curamend.",
+  eventSchedule: {
+    "@type": "Schedule",
+    repeatFrequency: "P1W",
+    byDay: "https://schema.org/Saturday",
+    duration: "PT2H",
+  },
+  organizer: {
+    "@type": "Person",
+    name: "Sunil Saldanha",
+    url: `${SITE_URL}/about`,
+  },
+  url: `${SITE_URL}/sessions`,
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Sessions", item: `${SITE_URL}/sessions` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/sessions")({
   head: () => ({
     meta: [
-      { title: "Saturday Healing Sessions | Curamend" },
+      { title: "Saturday Emotional Healing Sessions with Sunil Saldanha | Curamend" },
       {
         name: "description",
         content:
-          "Two-hour emotional healing sessions every Saturday with Sunil Saldanha. Limited seats.",
+          "Join Sunil Saldanha's two-hour group emotional healing sessions every Saturday at Curamend. Limited seats — reserve your spot today.",
       },
-      { property: "og:title", content: "Saturday Healing Sessions | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "Saturday healing sessions, group emotional healing, Sunil Saldanha sessions, Curamend sessions, emotional healing group, weekly healing session, trauma healing group, breathwork session",
+      },
+      { property: "og:title", content: "Saturday Emotional Healing Sessions — Sunil Saldanha | Curamend" },
       {
         property: "og:description",
-        content: "What to expect, what's included and how to reserve your Saturday healing session.",
+        content:
+          "Two-hour emotional healing sessions every Saturday with Sunil Saldanha. What to expect, what's included and how to reserve your spot.",
       },
+      { property: "og:url", content: `${SITE_URL}/sessions` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/sessions` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(sessionsJsonLd) }],
   }),
   component: Sessions,
 });

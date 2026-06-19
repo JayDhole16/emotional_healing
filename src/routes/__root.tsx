@@ -75,28 +75,101 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Curamend",
+      description:
+        "Sunil Saldanha's emotional healing practice blending neuroscience with ancient wisdom.",
+      publisher: { "@id": `${SITE_URL}/#person` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/?s={search_term_string}` },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Sunil Saldanha",
+      url: SITE_URL,
+      jobTitle: "Emotional Healing Specialist",
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+      sameAs: [],
+      description:
+        "Sunil Saldanha is an emotional healing specialist with 8+ years of practice, blending cognitive neuroscience, trauma therapy, breathwork, and energy psychology.",
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Curamend",
+      url: SITE_URL,
+      email: "curamendhealthcare@gmail.com",
+      telephone: "+919321931801",
+      founder: { "@id": `${SITE_URL}/#person` },
+      description:
+        "Curamend by Sunil Saldanha offers evidence-based emotional healing sessions every Saturday, integrating neuroscience and ancient healing traditions.",
+      serviceType: [
+        "Emotional Healing",
+        "Trauma Therapy",
+        "Breathwork",
+        "Energy Psychology",
+        "Mindfulness",
+        "Group Healing Sessions",
+      ],
+      openingHours: "Sa 00:00-23:59",
+    },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Curamend — Science of the Soul. Healing of the Heart." },
+      { title: "Sunil Saldanha — Curamend | Emotional Healing Specialist" },
       {
         name: "description",
         content:
-          "Curamend by Sunil Saldanha blends modern neuroscience with ancient healing traditions. Emotional healing sessions every Saturday.",
+          "Sunil Saldanha is an emotional healing specialist at Curamend, offering evidence-based healing sessions blending neuroscience with ancient wisdom. Saturday group sessions available.",
       },
       { name: "author", content: "Sunil Saldanha" },
-      { property: "og:title", content: "Curamend — Where Neuroscience Meets Inner Peace" },
+      {
+        name: "keywords",
+        content:
+          "Sunil Saldanha, Curamend, emotional healing, emotional healing specialist, trauma healing, breathwork, energy psychology, neuroscience healing, group healing sessions, Saturday healing, inner peace, trauma release, mindfulness, emotional freedom, holistic healing",
+      },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      // Open Graph
+      { property: "og:site_name", content: "Curamend" },
+      { property: "og:title", content: "Sunil Saldanha — Curamend | Emotional Healing Specialist" },
       {
         property: "og:description",
         content:
-          "Evidence-based, spiritually grounded emotional healing with Sunil Saldanha. Sessions every Saturday.",
+          "Evidence-based, spiritually grounded emotional healing with Sunil Saldanha. Neuroscience meets ancient wisdom. Sessions every Saturday.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:locale", content: "en_IN" },
+      // Twitter
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Sunil Saldanha — Curamend | Emotional Healing" },
+      {
+        name: "twitter:description",
+        content:
+          "Emotional healing with Sunil Saldanha — neuroscience meets ancient wisdom. Saturday sessions.",
+      },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
+      { rel: "icon", href: "/doctor-portrait.jpg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/doctor-portrait.jpg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -104,6 +177,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(jsonLd),
+      },
     ],
   }),
   shellComponent: RootShell,

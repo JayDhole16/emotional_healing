@@ -9,21 +9,47 @@ import { AnimatedCounter } from "@/components/ui-custom/AnimatedCounter";
 import { ArrowRight, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const scienceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/science#webpage`,
+  url: `${SITE_URL}/science`,
+  name: "The Neuroscience of Emotional Healing | Curamend — Sunil Saldanha",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Science", item: `${SITE_URL}/science` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/science")({
   head: () => ({
     meta: [
-      { title: "The Science of Emotional Healing | Curamend" },
+      { title: "Neuroscience of Emotional Healing | Curamend — Sunil Saldanha" },
       {
         name: "description",
         content:
-          "Peer-reviewed, evidence-informed and clinically validated. Discover the neuroscience behind Curamend's emotional healing methodology.",
+          "Discover the neuroscience behind Sunil Saldanha's emotional healing methodology. Neuroplasticity, trauma-informed care and energy psychology — peer-reviewed and clinically validated.",
       },
-      { property: "og:title", content: "The Science of Emotional Healing | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "emotional healing neuroscience, neuroplasticity healing, trauma-informed care, energy psychology science, evidence-based emotional healing, Sunil Saldanha science, Curamend methodology, psychosomatic healing",
+      },
+      { property: "og:title", content: "Neuroscience of Emotional Healing | Curamend — Sunil Saldanha" },
       {
         property: "og:description",
-        content: "Neuroplasticity, trauma-informed care and energy psychology — the science behind the healing.",
+        content:
+          "Neuroplasticity, trauma-informed care and energy psychology — the peer-reviewed science behind Curamend's emotional healing practice.",
       },
+      { property: "og:url", content: `${SITE_URL}/science` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/science` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(scienceJsonLd) }],
   }),
   component: Science,
 });

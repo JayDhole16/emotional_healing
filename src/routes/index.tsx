@@ -17,21 +17,46 @@ import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
 import { CTABanner } from "@/components/sections/CTABanner";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/#webpage`,
+  url: SITE_URL,
+  name: "Sunil Saldanha — Curamend | Emotional Healing Specialist",
+  description:
+    "Sunil Saldanha offers emotional healing sessions combining neuroscience and ancient wisdom at Curamend. Saturday group sessions available.",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }],
+  },
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Curamend — Heal What Words Cannot Reach | Sunil Saldanha" },
+      { title: "Sunil Saldanha — Emotional Healing Specialist | Curamend" },
       {
         name: "description",
         content:
-          "Emotional healing with Sunil Saldanha — neuroscience meets ancient wisdom. Group sessions every Saturday.",
+          "Sunil Saldanha is an emotional healing specialist at Curamend. Evidence-based sessions blending neuroscience, breathwork and ancient healing wisdom — every Saturday.",
       },
-      { property: "og:title", content: "Curamend — Heal What Words Cannot Reach" },
+      {
+        name: "keywords",
+        content:
+          "Sunil Saldanha, emotional healing, Curamend, trauma healing, neuroscience healing, emotional healing specialist, breathwork, Saturday healing sessions, inner peace, emotional freedom",
+      },
+      { property: "og:title", content: "Sunil Saldanha — Emotional Healing Specialist | Curamend" },
       {
         property: "og:description",
-        content: "Evidence-based, spiritually grounded emotional healing. Sessions every Saturday.",
+        content:
+          "Evidence-based, spiritually grounded emotional healing with Sunil Saldanha. Neuroscience meets ancient wisdom. Sessions every Saturday.",
       },
+      { property: "og:url", content: SITE_URL },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(homeJsonLd) }],
   }),
   component: Home,
 });

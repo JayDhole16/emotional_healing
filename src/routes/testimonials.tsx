@@ -8,21 +8,47 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const testimonialsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/testimonials#webpage`,
+  url: `${SITE_URL}/testimonials`,
+  name: "Testimonials — Emotional Healing Stories | Curamend — Sunil Saldanha",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Testimonials", item: `${SITE_URL}/testimonials` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — Voices of Transformation | Curamend" },
+      { title: "Testimonials — Emotional Healing Stories | Curamend — Sunil Saldanha" },
       {
         name: "description",
         content:
-          "Real stories of emotional healing from Curamend clients, guided by Sunil Saldanha.",
+          "Real stories of emotional healing from Curamend clients guided by Sunil Saldanha. Read transformation testimonials from people who overcame trauma, anxiety and emotional pain.",
       },
-      { property: "og:title", content: "Voices of Transformation | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "Sunil Saldanha testimonials, Curamend reviews, emotional healing stories, healing testimonials, trauma healing results, Curamend client stories, emotional healing success",
+      },
+      { property: "og:title", content: "Testimonials — Emotional Healing Stories | Curamend — Sunil Saldanha" },
       {
         property: "og:description",
-        content: "Client testimonials, case studies and stories of lasting emotional healing.",
+        content:
+          "Client testimonials, case studies and stories of lasting emotional healing with Sunil Saldanha at Curamend.",
       },
+      { property: "og:url", content: `${SITE_URL}/testimonials` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/testimonials` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(testimonialsJsonLd) }],
   }),
   component: Testimonials,
 });

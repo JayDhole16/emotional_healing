@@ -12,21 +12,47 @@ import { SectionHeader } from "@/components/ui-custom/SectionHeader";
 import { Reveal } from "@/components/ui-custom/Reveal";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 
+const SITE_URL = "https://www.sunilsaldanha.com";
+
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/services#webpage`,
+  url: `${SITE_URL}/services`,
+  name: "Emotional Healing Services | Curamend — Sunil Saldanha",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+    ],
+  },
+};
+
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Our Services | Curamend Emotional Healing" },
+      { title: "Emotional Healing Services | Curamend — Sunil Saldanha" },
       {
         name: "description",
         content:
-          "Explore Curamend's healing services — group emotional healing, individual consultations, trauma release, breathwork and more, led by Sunil Saldanha.",
+          "Explore emotional healing services by Sunil Saldanha at Curamend — trauma release, breathwork, energy psychology, group healing sessions and individual consultations.",
       },
-      { property: "og:title", content: "Our Services | Curamend" },
+      {
+        name: "keywords",
+        content:
+          "emotional healing services, trauma release, breathwork sessions, energy psychology, group healing, individual healing consultation, Sunil Saldanha services, Curamend services, mindfulness therapy",
+      },
+      { property: "og:title", content: "Emotional Healing Services | Curamend — Sunil Saldanha" },
       {
         property: "og:description",
-        content: "Evidence-based, spiritually grounded healing services for lasting emotional freedom.",
+        content:
+          "Evidence-based, spiritually grounded healing services for lasting emotional freedom — personally led by Sunil Saldanha.",
       },
+      { property: "og:url", content: `${SITE_URL}/services` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/services` }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(servicesJsonLd) }],
   }),
   component: Services,
 });
