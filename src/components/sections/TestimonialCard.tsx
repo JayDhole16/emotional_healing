@@ -30,10 +30,9 @@ export function TestimonialCard({
         )}
         <div className="min-w-0">
           <p className="font-ui text-sm font-semibold text-navy">{t.name}</p>
-          <p className="font-ui text-xs text-navy/50">
-            {t.city}
-            {withMeta && t.date ? ` · ${t.date}` : ""}
-          </p>
+          {withMeta && t.date && (
+            <p className="font-ui text-xs text-navy/50">{t.date}</p>
+          )}
         </div>
         <div className="ml-auto flex shrink-0 gap-0.5">
           {Array.from({ length: t.rating }).map((_, i) => (

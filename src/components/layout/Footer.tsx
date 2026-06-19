@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
-import { NAV_ITEMS, LOCATIONS, BRAND } from "@/data/content";
+import { Mail, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
+import { NAV_ITEMS, BRAND } from "@/data/content";
 
 export function Footer() {
   return (
@@ -60,33 +60,8 @@ export function Footer() {
             {BRAND.email}
           </a>
           <p className="mt-4 font-body text-sm text-muted-ink">
-            Emotional healing sessions every Saturday — 2 hours, across all three locations.
+            Emotional healing sessions every Saturday — 2 hours.
           </p>
-        </div>
-
-        <div>
-          <h3 className="font-ui text-sm font-semibold uppercase tracking-wider text-gold">
-            Our Locations
-          </h3>
-          <ul className="mt-4 space-y-4">
-            {LOCATIONS.map((loc) => (
-              <li key={loc.id} className="font-body text-sm text-platinum/80">
-                <div className="flex items-start gap-2">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cerulean" />
-                  <div>
-                    <span className="font-semibold text-foreground">{loc.name}</span>
-                    <a
-                      href={`tel:${loc.phones[0].replace(/[^+\d]/g, "")}`}
-                      className="mt-0.5 flex items-center gap-1.5 text-muted-ink hover:text-foreground"
-                    >
-                      <Phone className="h-3 w-3" />
-                      {loc.phones[0]}
-                    </a>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 

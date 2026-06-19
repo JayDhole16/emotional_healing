@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Loader2, CheckCircle2, MessageCircle } from "lucide-react";
-import { LOCATIONS, BRAND, FAQS } from "@/data/content";
+import { Mail, Loader2, CheckCircle2, MessageCircle } from "lucide-react";
+import { BRAND, FAQS } from "@/data/content";
 import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui-custom/Button";
 import { Reveal } from "@/components/ui-custom/Reveal";
@@ -17,12 +17,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with Curamend to book an emotional healing session. Reach us at Thane, Ghatkopar or Kalyan, or email curamendhealthcare@gmail.com.",
+          "Get in touch with Curamend to book an emotional healing session or email curamendhealthcare@gmail.com.",
       },
       { property: "og:title", content: "Contact & Book | Curamend" },
       {
         property: "og:description",
-        content: "Book your Saturday healing session with Dr. Sunil Saldanha.",
+        content: "Book your Saturday healing session with Sunil Saldanha.",
       },
     ],
   }),
@@ -33,7 +33,6 @@ const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
   email: z.string().trim().email("Please enter a valid email").max(255),
   phone: z.string().trim().min(7, "Please enter a valid phone number").max(20),
-  location: z.string().min(1, "Please select a location"),
   service: z.string().min(1, "Please select a service"),
   source: z.string().max(100).optional(),
   message: z.string().trim().min(5, "Please tell us a little more").max(1000),
@@ -125,18 +124,6 @@ function Contact() {
                       <input id="phone" type="tel" className={fieldCls} placeholder="+91 ..." {...register("phone")} />
                       {errors.phone && <p className="mt-1 text-xs text-destructive">{errors.phone.message}</p>}
                     </div>
-                    <div>
-                      <label htmlFor="location" className="mb-1.5 block font-ui text-sm text-platinum/80">
-                        Preferred Location
-                      </label>
-                      <select id="location" className={cn(fieldCls, "appearance-none")} defaultValue="" {...register("location")}>
-                        <option value="" disabled>Select a location</option>
-                        {LOCATIONS.map((l) => (
-                          <option key={l.id} value={l.name}>{l.name}</option>
-                        ))}
-                      </select>
-                      {errors.location && <p className="mt-1 text-xs text-destructive">{errors.location.message}</p>}
-                    </div>
                   </div>
 
                   <div className="grid gap-5 sm:grid-cols-2">
@@ -197,31 +184,6 @@ function Contact() {
                   <p className="truncate font-body text-sm text-foreground">{BRAND.email}</p>
                 </div>
               </a>
-
-              {LOCATIONS.map((loc) => (
-                <div key={loc.id} className="rounded-2xl border border-border bg-surface p-5">
-                  <div className="flex items-center gap-2">
-                    <span className="h-px w-5 bg-gold" />
-                    <h3 className="font-display text-xl text-foreground">{loc.name}</h3>
-                  </div>
-                  <div className="mt-3 space-y-1.5">
-                    {loc.phones.map((p) => (
-                      <a
-                        key={p}
-                        href={`tel:${p.replace(/[^+\d]/g, "")}`}
-                        className="flex items-center gap-2.5 font-ui text-sm text-platinum/80 hover:text-foreground"
-                      >
-                        <Phone className="h-4 w-4 shrink-0 text-cerulean" />
-                        {p}
-                      </a>
-                    ))}
-                  </div>
-                  <div className="mt-2 flex items-start gap-2.5 font-body text-sm text-muted-ink">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cerulean" />
-                    <span>{loc.address}</span>
-                  </div>
-                </div>
-              ))}
 
               <a
                 href={`https://wa.me/${BRAND.whatsapp}`}

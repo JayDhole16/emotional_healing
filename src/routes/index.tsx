@@ -6,7 +6,6 @@ import {
   STATS,
   VALUE_CARDS,
   TESTIMONIALS,
-  LOCATIONS,
   SESSION_FACTS,
 } from "@/data/content";
 import { SacredGeometry } from "@/components/ui-custom/SacredGeometry";
@@ -16,17 +15,16 @@ import { AnimatedCounter } from "@/components/ui-custom/AnimatedCounter";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
 import { ImagePlaceholder } from "@/components/ui-custom/ImagePlaceholder";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
-import { LocationCard } from "@/components/sections/LocationCard";
 import { CTABanner } from "@/components/sections/CTABanner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Curamend — Heal What Words Cannot Reach | Dr. Sunil Saldanha" },
+      { title: "Curamend — Heal What Words Cannot Reach | Sunil Saldanha" },
       {
         name: "description",
         content:
-          "Emotional healing with Dr. Sunil Saldanha — neuroscience meets ancient wisdom. Group sessions every Saturday across Thane, Ghatkopar & Kalyan.",
+          "Emotional healing with Sunil Saldanha — neuroscience meets ancient wisdom. Group sessions every Saturday.",
       },
       { property: "og:title", content: "Curamend — Heal What Words Cannot Reach" },
       {
@@ -169,7 +167,7 @@ function Home() {
           <Reveal className="relative mx-auto w-full max-w-md">
             <img
               src="/doctor-portrait.jpg"
-              alt="Dr. Sunil Saldanha — Professional Photo"
+              alt="Sunil Saldanha — Professional Photo"
               className="relative aspect-[6/7] w-full object-cover rounded-2xl border border-gold/40"
             />
             <div className="absolute bottom-4 left-4 rounded-full bg-gradient-to-r from-violet to-[#7a52d6] px-5 py-2 font-ui text-sm font-semibold text-white shadow-glow">
@@ -189,7 +187,7 @@ function Home() {
             <div className="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
                 With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Dr. Saldhana has developed a proprietary methodology
+                integrative healing modalities, Sunil Saldanha has developed a proprietary methodology
                 that addresses emotional wounds at their root — not merely their symptoms.
               </p>
               <p className="text-muted-ink">
@@ -201,7 +199,7 @@ function Home() {
               to="/about"
               className="mt-6 inline-flex items-center gap-1 font-ui text-sm font-semibold text-gold hover:text-amber"
             >
-              Dr. Saldhana's Full Story <ArrowRight className="h-4 w-4" />
+              Sunil Saldanha's Full Story <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
@@ -219,7 +217,7 @@ function Home() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-platinum/90">
               Our group emotional healing sessions run every Saturday, two hours each, across all
-              three Curamend locations. Limited seats. Transformative results.
+              three Curamend sessions. Limited seats. Transformative results.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -276,28 +274,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Locations preview */}
-      <section className="bg-navy py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <SectionHeader eyebrow="Visit Us" title="Find Us Near You" />
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {LOCATIONS.map((loc, i) => (
-              <Reveal key={loc.id} delay={i * 0.1}>
-                <LocationCard loc={loc} />
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Link
-              to="/locations"
-              className="inline-flex items-center gap-1 font-ui text-sm font-semibold text-gold hover:text-amber"
-            >
-              View All Locations <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      {/* Call to Action */}
       <CTABanner />
     </>
   );

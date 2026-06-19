@@ -15,7 +15,7 @@ export const Route = createFileRoute("/testimonials")({
       {
         name: "description",
         content:
-          "Real stories of emotional healing from Curamend clients across Mumbai, Thane and Kalyan, guided by Dr. Sunil Saldanha.",
+          "Real stories of emotional healing from Curamend clients, guided by Sunil Saldanha.",
       },
       { property: "og:title", content: "Voices of Transformation | Curamend" },
       {

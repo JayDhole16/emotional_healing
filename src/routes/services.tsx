@@ -19,7 +19,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore Curamend's healing services — group emotional healing, individual consultations, trauma release, breathwork and more, led by Dr. Sunil Saldanha.",
+          "Explore Curamend's healing services — group emotional healing, individual consultations, trauma release, breathwork and more, led by Sunil Saldanha.",
       },
       { property: "og:title", content: "Our Services | Curamend" },
       {
@@ -37,7 +37,7 @@ function Services() {
       <PageHero
         eyebrow="What We Offer"
         title="Our Services"
-        subtitle="A spectrum of healing modalities, each rooted in science and delivered with spiritual depth — all personally guided by Dr. Saldhana."
+        subtitle="A spectrum of healing modalities, each rooted in science and delivered with spiritual depth — all personally guided by Sunil Saldanha."
       />
 
       {/* Overview */}

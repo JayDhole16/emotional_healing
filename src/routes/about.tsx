@@ -11,13 +11,13 @@ import { SacredGeometry } from "@/components/ui-custom/SacredGeometry";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dr. Sunil Saldanha | Curamend" },
+      { title: "About Sunil Saldanha | Curamend" },
       {
         name: "description",
         content:
-          "Meet Dr. Sunil Saldanha — emotional healing specialist and founder of Curamend, blending neuroscience with ancient healing wisdom.",
+          "Meet Sunil Saldanha — emotional healing specialist and founder of Curamend, blending neuroscience with ancient healing wisdom.",
       },
-      { property: "og:title", content: "About Dr. Sunil Saldanha | Curamend" },
+      { property: "og:title", content: "About Sunil Saldanha | Curamend" },
       {
         property: "og:description",
         content: "The story, credentials and philosophy behind Curamend's emotional healing practice.",
@@ -69,7 +69,7 @@ function About() {
           <Reveal className="mx-auto w-full max-w-md">
             <img
               src="/about-portrait.jpg"
-              alt="Dr. Saldhana full biography photo"
+              alt="Sunil Saldanha full biography photo"
               className="aspect-[6/7] w-full object-cover object-[center_20%] rounded-2xl border border-gold/40"
             />
           </Reveal>
@@ -82,7 +82,7 @@ function About() {
             <div className="mt-6 space-y-4 font-body text-[15px] leading-relaxed text-platinum/80">
               <p>
                 With over eight years of clinical practice spanning conventional psychology and
-                integrative healing modalities, Dr. Saldhana has developed a proprietary methodology
+                integrative healing modalities, Sunil Saldanha has developed a proprietary methodology
                 that addresses emotional wounds at their root.
               </p>
               <p className="text-muted-ink">
@@ -131,7 +131,7 @@ function About() {
               align="left"
             />
             <p className="mt-6 font-body text-[15px] leading-relaxed text-platinum/80">
-              True healing happens when the mind, body and spirit are addressed as one. Dr. Saldhana's
+              True healing happens when the mind, body and spirit are addressed as one. Sunil Saldanha's
               work refuses the false choice between science and soul — drawing on both to reach what
               neither could alone.
             </p>
@@ -196,7 +196,7 @@ function About() {
         </div>
       </section>
 
-      <CTABanner title="Contact Us with Dr. Saldhana" ctaLabel="Contact Us" />
+      <CTABanner title="Contact Us with Sunil Saldanha" ctaLabel="Contact Us" />
     </>
   );
 }

@@ -139,7 +139,7 @@ function Science() {
                 <div className="flex items-start gap-4 rounded-xl border border-violet/15 bg-white p-5">
                   <FileText className="mt-0.5 h-5 w-5 shrink-0 text-cerulean" />
                   <p className="font-mono text-sm text-navy/70">
-                    [Publication / citation placeholder {n} — Dr. Saldhana's published works and
+                    [Publication / citation placeholder {n} — Sunil Saldanha's published works and
                     research references to be added by client.]
                   </p>
                 </div>

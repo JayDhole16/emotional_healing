@@ -32,10 +32,10 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <Link to="/" className="flex flex-col leading-none">
           <span className="font-display text-2xl font-semibold text-foreground">
-            {BRAND.name}
+            Sunil
           </span>
           <span className="font-ui text-[10px] uppercase tracking-[0.28em] text-gold">
-            Healthcare
+            Saldanha
           </span>
         </Link>
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Calendar, Clock, MapPin, CheckCircle2 } from "lucide-react";
-import { SESSION_INCLUDES, LOCATIONS } from "@/data/content";
+import { Calendar, Clock, CheckCircle2 } from "lucide-react";
+import { SESSION_INCLUDES } from "@/data/content";
 import { PageHero } from "@/components/sections/PageHero";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/sessions")({
       {
         name: "description",
         content:
-          "Two-hour emotional healing sessions every Saturday with Dr. Sunil Saldanha, across Thane, Ghatkopar and Kalyan. Limited seats.",
+          "Two-hour emotional healing sessions every Saturday with Sunil Saldanha. Limited seats.",
       },
       { property: "og:title", content: "Saturday Healing Sessions | Curamend" },
       {
@@ -42,7 +42,7 @@ function Sessions() {
       <PageHero
         eyebrow="Every Saturday · 2 Hours"
         title="Saturday Healing Sessions"
-        subtitle="A protected space, once a week, to do the deep work of emotional healing — guided personally by Dr. Saldhana."
+        subtitle="A protected space, once a week, to do the deep work of emotional healing — guided personally by Sunil Saldanha."
       >
         <div className="mt-8 flex justify-center">
           <ButtonLink to="/contact" size="lg">
@@ -65,7 +65,6 @@ function Sessions() {
               {[
                 { icon: Calendar, label: "Every Saturday" },
                 { icon: Clock, label: "2 Hours" },
-                { icon: MapPin, label: "3 Locations" },
               ].map((f) => (
                 <div key={f.label} className="rounded-xl border border-border bg-surface p-4 text-center">
                   <f.icon className="mx-auto h-6 w-6 text-gold" />
@@ -115,10 +114,6 @@ function Sessions() {
               <div className="rounded-xl border border-violet/15 bg-white p-5 text-center">
                 <p className="font-ui text-xs uppercase tracking-wide text-navy/50">Duration</p>
                 <p className="mt-1 font-display text-xl text-navy">2 Hours</p>
-              </div>
-              <div className="rounded-xl border border-violet/15 bg-white p-5 text-center">
-                <p className="font-ui text-xs uppercase tracking-wide text-navy/50">Locations</p>
-                <p className="mt-1 font-display text-xl text-navy">All 3 Branches</p>
               </div>
             </div>
           </Reveal>
@@ -186,7 +181,7 @@ function Sessions() {
             </ul>
           </Reveal>
           <p className="mt-6 text-center font-ui text-sm text-navy/50">
-            Available across all {LOCATIONS.length} Curamend locations.
+            Available across all Curamend sessions.
           </p>
         </div>
       </section>
