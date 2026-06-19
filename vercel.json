@@ -1,6 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|_next/|favicon|robots\\.txt|sitemap\\.xml|.*\\.[a-zA-Z0-9]+$).*)",
+      "destination": "/api/[...path]"
+    }
+  ]
 }
