@@ -1,5 +1,8 @@
-import { type ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef, useEffect, type ReactNode } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type RevealProps = {
   children: ReactNode;
@@ -8,17 +11,36 @@ type RevealProps = {
   y?: number;
 };
 
-export function Reveal({ children, className, delay = 0, y = 24 }: RevealProps) {
-  const reduce = useReducedMotion();
+export function Reveal({ children, className = "", delay = 0, y = 30 }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    gsap.set(el, { autoAlpha: 0, y });
+
+    const st = ScrollTrigger.create({
+      trigger: el,
+      start: "top 80%",
+      toggleActions: "play none none none",
+      animation: gsap.to(el, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.6,
+        delay,
+        ease: "power2.out",
+      }),
+    });
+
+    return () => {
+      st.kill();
+    };
+  }, [delay, y]);
+
   return (
-    <motion.div
-      className={className}
-      initial={reduce ? false : { opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.4, 0, 0.2, 1] }}
-    >
+    <div ref={ref} className={className} style={{ visibility: "hidden" }}>
       {children}
-    </motion.div>
+    </div>
   );
 }

@@ -23,12 +23,11 @@ export const BRAND = {
 export type NavItem = { label: string; to: string };
 
 export const NAV_ITEMS: NavItem[] = [
+  { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Sessions", to: "/sessions" },
   { label: "Science", to: "/science" },
-  { label: "Testimonials", to: "/testimonials" },
-  { label: "Contact", to: "/contact" },
 ];
 
 export type Stat = { value: number; suffix?: string; label: string; icon: LucideIcon };

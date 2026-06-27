@@ -1,58 +1,60 @@
-import { useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { useSmoothScroll } from "../animations/SmoothScrollProvider";
+import CountUpModule from "react-countup";
+import gsap from "gsap";
+
+const CountUp = (CountUpModule as any).default || CountUpModule;
 
 type AnimatedCounterProps = {
   value: number;
   suffix?: string;
   duration?: number;
   className?: string;
+  startCounting?: boolean;
 };
-
-function easeOutQuart(t: number) {
-  return 1 - Math.pow(1 - t, 4);
-}
 
 export function AnimatedCounter({
   value,
   suffix = "",
-  duration = 2000,
+  duration = 1.8,
   className,
+  startCounting = false,
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const reduce = useReducedMotion();
-  const [display, setDisplay] = useState(reduce ? value : 0);
-  const started = useRef(false);
+  const { isReducedMotion } = useSmoothScroll();
 
-  useEffect(() => {
-    if (reduce) {
-      setDisplay(value);
-      return;
+  const handleEnd = () => {
+    if (ref.current && !isReducedMotion) {
+      gsap.fromTo(
+        ref.current,
+        { scale: 1 },
+        { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power1.inOut" }
+      );
     }
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !started.current) {
-          started.current = true;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const t = Math.min((now - start) / duration, 1);
-            setDisplay(Math.round(easeOutQuart(t) * value));
-            if (t < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      },
-      { threshold: 0.4 },
+  };
+
+  if (isReducedMotion) {
+    return (
+      <span ref={ref} className={className}>
+        {value}{suffix}
+      </span>
     );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [value, duration, reduce]);
+  }
 
   return (
-    <span ref={ref} className={className}>
-      {display}
-      {suffix}
+    <span ref={ref} className={`inline-block origin-center ${className || ""}`}>
+      {startCounting ? (
+        <CountUp 
+          start={0} 
+          end={value} 
+          duration={duration} 
+          suffix={suffix} 
+          onEnd={handleEnd} 
+          useEasing 
+        />
+      ) : (
+        `0${suffix}`
+      )}
     </span>
   );
 }

@@ -8,12 +8,14 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-
+import { motion, useScroll } from "framer-motion";
+import { SmoothScrollProvider } from "../components/animations/SmoothScrollProvider";
+import { LoadingSequence } from "../components/animations/LoadingSequence";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
-import { WhatsAppButton } from "../components/layout/WhatsAppButton";
+import { ContactWidget } from "../components/layout/WhatsAppButton";
 
 function NotFoundComponent() {
   return (
@@ -207,17 +209,25 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { scrollYProgress } = useScroll();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-background">
-        <Navbar />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <SmoothScrollProvider>
+          <LoadingSequence />
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-[3px] bg-gold z-[60] origin-left"
+          style={{ scaleX: scrollYProgress }}
+        />
+        <div className="flex min-h-screen flex-col bg-background">
+          <Navbar />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+          <ContactWidget />
+        </div>
+      </SmoothScrollProvider>
     </QueryClientProvider>
   );
 }

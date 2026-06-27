@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 type Variant = "primary" | "gold" | "outline" | "ghost";
 type Size = "md" | "lg";
@@ -36,11 +37,17 @@ export function ButtonLink({
   className,
   children,
 }: CommonProps & { to: string }) {
-  return (
+  const isMagnetic = variant === "primary" || variant === "gold";
+  const btn = (
     <Link to={to} className={cn(base, variants[variant], sizes[size], className)}>
       {children}
     </Link>
   );
+
+  if (isMagnetic) {
+    return <MagneticButton>{btn}</MagneticButton>;
+  }
+  return btn;
 }
 
 export function ButtonAnchor({
@@ -51,11 +58,17 @@ export function ButtonAnchor({
   children,
   ...rest
 }: CommonProps & { href: string } & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-  return (
+  const isMagnetic = variant === "primary" || variant === "gold";
+  const btn = (
     <a href={href} className={cn(base, variants[variant], sizes[size], className)} {...rest}>
       {children}
     </a>
   );
+
+  if (isMagnetic) {
+    return <MagneticButton>{btn}</MagneticButton>;
+  }
+  return btn;
 }
 
 export function Button({
@@ -65,9 +78,15 @@ export function Button({
   children,
   ...rest
 }: CommonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
+  const isMagnetic = variant === "primary" || variant === "gold";
+  const btn = (
     <button className={cn(base, variants[variant], sizes[size], className)} {...rest}>
       {children}
     </button>
   );
+
+  if (isMagnetic) {
+    return <MagneticButton>{btn}</MagneticButton>;
+  }
+  return btn;
 }
