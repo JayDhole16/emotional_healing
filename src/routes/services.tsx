@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
+import { CinematicVideoBg } from "@/components/animations/CinematicVideoBg";
 import { AnimatedPageBg } from "@/components/animations/AnimatedPageBg";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
@@ -74,7 +75,11 @@ function ServicesHero() {
 
   return (
     <section ref={ref} className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-black pt-28 pb-20">
-      <AnimatedPageBg />
+      <CinematicVideoBg 
+        src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-background-1610-large.mp4" 
+        overlayOpacity={0.7}
+        overlayGradient="bg-gradient-to-b from-black via-black/50 to-black"
+      />
       <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
         <p className="svc-hero-el font-ui text-xs font-semibold uppercase tracking-[0.3em] text-cerulean opacity-0">
           What We Offer

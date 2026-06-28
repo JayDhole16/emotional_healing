@@ -15,6 +15,7 @@ import {
 import { ButtonLink } from "@/components/ui-custom/Button";
 import { AnimatedCounter } from "@/components/ui-custom/AnimatedCounter";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
+import { CinematicVideoBg } from "@/components/animations/CinematicVideoBg";
 
 const HeroScene = lazy(() => import("@/components/animations/HeroScene"));
 
@@ -579,14 +580,20 @@ function Home() {
       <SessionSpotlight />
 
       {/* Final CTA */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-violet via-navy to-cerulean opacity-90" />
+      <div className="relative overflow-hidden group">
+        <CinematicVideoBg 
+          src="https://assets.mixkit.co/videos/preview/mixkit-ink-swirling-in-water-23653-large.mp4"
+          overlayGradient="bg-gradient-to-r from-violet/90 via-navy/80 to-cerulean/90"
+          overlayOpacity={0.85}
+        />
+        
+        {/* Subtle animated light orb over the video */}
         <motion.div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(201,162,75,0.4) 0%, transparent 60%), radial-gradient(circle at 70% 50%, rgba(45,156,219,0.3) 0%, transparent 60%)"
+            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(201,162,75,0.8) 0%, transparent 60%)"
           }}
-          animate={{ opacity: [0.08, 0.18, 0.08] }}
+          animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
         <div className="relative z-10 mx-auto max-w-3xl px-5 py-24 text-center sm:px-8">

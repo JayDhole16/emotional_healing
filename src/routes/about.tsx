@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BRAND } from "@/data/content";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
 import { AnimatedPageBg } from "@/components/animations/AnimatedPageBg";
+import { CinematicVideoBg } from "@/components/animations/CinematicVideoBg";
+import { ButtonLink } from "@/components/ui-custom/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -146,8 +148,12 @@ function StorySection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-navy py-24">
-      <AnimatedPageBg />
+    <section ref={ref} className="relative overflow-hidden bg-black py-24">
+      <CinematicVideoBg 
+        src="https://assets.mixkit.co/videos/preview/mixkit-abstract-background-of-a-purple-nebula-3147-large.mp4"
+        overlayOpacity={0.8}
+        overlayGradient="bg-gradient-to-br from-black via-navy/60 to-black"
+      />
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-gold/40">
           <img

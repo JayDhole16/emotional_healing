@@ -4,10 +4,13 @@ import { Calendar, Clock, CheckCircle2 } from "lucide-react";
 import { SESSION_INCLUDES } from "@/data/content";
 import { SectionHeader } from "@/components/ui-custom/SectionHeader";
 import { AnimatedPageBg } from "@/components/animations/AnimatedPageBg";
+import { lazy, Suspense } from "react";
 import { ButtonLink } from "@/components/ui-custom/Button";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const HealingSanctuary = lazy(() => import("@/components/animations/HealingSanctuary"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,12 +108,12 @@ function SessionsHero() {
         <motion.div
           className="h-[600px] w-[600px] rounded-full border border-violet/50"
           animate={{ rotate: 360 }}
-          transition={{ duration: 50, ease: "none", repeat: Infinity }}
+          transition={{ duration: 50, ease: "linear", repeat: Infinity }}
         />
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[440px] w-[440px] rounded-full border border-gold/40"
           animate={{ rotate: -360 }}
-          transition={{ duration: 30, ease: "none", repeat: Infinity }}
+          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
         />
       </div>
 
@@ -131,6 +134,50 @@ function SessionsHero() {
             Reserve Your Spot
           </ButtonLink>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function SanctuaryTourSection() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".sanctuary-text",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 70%" }
+        }
+      );
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={ref} className="relative overflow-hidden bg-black py-24 border-y border-white/10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-12 text-center">
+        <p className="sanctuary-text font-ui text-xs font-semibold uppercase tracking-[0.3em] text-gold mb-3 opacity-0">
+          Interactive Experience
+        </p>
+        <h2 className="sanctuary-text font-display text-4xl text-white sm:text-5xl opacity-0">
+          The Session Hall
+        </h2>
+        <p className="sanctuary-text mx-auto mt-4 max-w-2xl font-body text-lg text-platinum/70 opacity-0">
+          Step inside a 3D simulation of our physical group session hall. Take a walkaround to 
+          familiarize yourself with the safe, contained space where deep healing happens.
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-[1400px] px-5 w-full h-[60vh] sm:h-[70vh] rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(91,79,207,0.15)] relative">
+        <Suspense fallback={
+          <div className="absolute inset-0 flex items-center justify-center bg-navy">
+            <p className="font-ui text-sm uppercase tracking-widest text-gold animate-pulse">Loading Hall...</p>
+          </div>
+        }>
+          <HealingSanctuary />
+        </Suspense>
       </div>
     </section>
   );
@@ -345,6 +392,7 @@ function Sessions() {
   return (
     <>
       <SessionsHero />
+      <SanctuaryTourSection />
       <FormatSection />
       <ScheduleSection />
       <IncludedSection />
